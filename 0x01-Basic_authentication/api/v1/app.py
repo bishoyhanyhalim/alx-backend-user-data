@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Route module for the API
+Route module for the API for the task
 """
 from os import getenv
 from api.v1.views import app_views
@@ -28,9 +28,6 @@ elif AUTH_TYPE == 'basic_auth':
 @app.before_request
 def before_request():
     """_summary_
-
-    Returns:
-        _type_: _description_
     """
     if auth is None:
         pass
@@ -55,12 +52,6 @@ def not_found(error) -> str:
 @app.errorhandler(401)
 def unauthorized(error) -> str:
     """_summary_
-
-    Args:
-        error (_type_): _description_
-
-    Returns:
-        str: _description_
     """
     return jsonify({"error": "Unauthorized"}), 401
 
@@ -68,12 +59,6 @@ def unauthorized(error) -> str:
 @app.errorhandler(403)
 def forbidden(error) -> str:
     """_summary_
-
-    Args:
-        error (_type_): _description_
-
-    Returns:
-        str: _description_
     """
     return jsonify({"error": "Forbidden"}), 403
 
