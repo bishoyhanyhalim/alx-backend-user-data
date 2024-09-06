@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Route module for the API
+Route module for the API for the task
 """
 from os import getenv
 from api.v1.views import app_views
@@ -34,7 +34,7 @@ elif AUTH_TYPE == "session_db_auth":
 @app.before_request
 def bef_req():
     """
-    Filter each request before it's handled by the proper route
+    Filter each request before
     """
     if auth is None:
         pass
@@ -70,7 +70,7 @@ def unauthorized(error) -> str:
 
 @app.errorhandler(403)
 def forbidden(error) -> str:
-    """ Request unauthorized handler
+    """ Request unauthorized handler the task
     """
     return jsonify({"error": "Forbidden"}), 403
 

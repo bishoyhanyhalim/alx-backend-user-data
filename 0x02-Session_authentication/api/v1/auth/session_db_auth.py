@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Module of Session in Database
+""" Module of Session in Database for the task
 """
 from api.v1.auth.session_exp_auth import SessionExpAuth
 from datetime import datetime, timedelta
